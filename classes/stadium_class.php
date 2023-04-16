@@ -32,15 +32,30 @@ class Stadium_Class extends db_connection
     {
         $sql = "SELECT * FROM `stadium` WHERE `Stadium_id`='$stadium_id'";
 
-        return $this->getAData();
+        return $this->getAData($sql);
     }
 
     public function select_all_stadiums_cls()
     {
         $sql = "SELECT * FROM `stadium`";
 
-        return $this->getAllData();
+        return $this->getAllData($sql);
 
     }
 
+    function stadium_event_numbers_cls(){
+        $sql = "SELECT COUNT(event.Event_id) as events, stadium.stadium_name, stadium.Stadium_id FROM `stadium`, event WHERE Stadium.Stadium_id = event.venue GROUP BY event.venue;";
+
+        return $this->getAllData($sql);
+
+    }
+
+    function stadium_revenue_cls(){
+        $sql = "SELECT SUM(price_per_ticket*number_issued) as revenue, event.venue FROM `ticket`, event, stadium where ticket.Event_id = event.Event_id GROUP by event.venue";
+
+        return $this->getAllData($sql);
+
+    }
+
+ 
 }

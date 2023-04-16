@@ -33,3 +33,15 @@ function select_all_stadiums_cls()
     $stadium = new Stadium_Class;
     return $stadium->select_all_stadiums_cls();
 }
+
+
+function stadium_event_numbers_ctr(){
+    $stadium = new Stadium_Class;
+    return $stadium->stadium_event_numbers_cls();
+}
+
+function stadium_revenue_ctr(){
+    $stadium = new Stadium_Class;
+    return $stadium->stadium_revenue_cls();
+}
+
