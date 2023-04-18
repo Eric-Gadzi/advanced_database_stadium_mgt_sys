@@ -45,3 +45,30 @@ function stadium_revenue_ctr(){
     return $stadium->stadium_revenue_cls();
 }
 
+function stadium_revenue_list_ctr(){
+   $stadium = new Stadium_Class;
+    return $stadium->stadium_revenue_list_cls(); 
+}
+
+function event_ticket_list_ctr(){
+     $stadium = new Stadium_Class;
+    return $stadium->event_ticket_list_cls();
+}
+
+function stadium_details_ctr(){
+    $stadium = new Stadium_Class;
+    return $stadium->stadium_details_cls();
+}
+
+function count_stadiums(){
+    $stadium = new Stadium_Class;
+    return $stadium->count_stadiums();
+}
+
+function count_events()
+{
+    $stadium = new Stadium_Class;
+    return $stadium->count_event();
+}
+
+
